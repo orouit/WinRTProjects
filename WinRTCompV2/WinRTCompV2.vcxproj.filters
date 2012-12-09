@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>179f6c30-d63f-4447-9d23-08a05f6a5973</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="CoreImplV2\AddressV2.cpp" />
+    <ClCompile Include="CoreImplV2\CitizenV2.cpp" />
+    <ClCompile Include="CompRTV2\AddressRT2.cpp" />
+    <ClCompile Include="CoreImplV2\PersonV2.cpp" />
+    <ClCompile Include="CompRTV2\PersonRT2.cpp" />
+    <ClCompile Include="CompRTV2\CitizenRT2.cpp" />
+    <ClCompile Include="CompRTV2b\AddressRT2b.cpp" />
+    <ClCompile Include="CompRTV2b\CitizenRT2b.cpp" />
+    <ClCompile Include="CompRTV2b\PersonRT2b.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Saveable.h" />
+    <ClInclude Include="CoreImplV2\AddressV2.h" />
+    <ClInclude Include="CoreImplV2\CitizenV2.h" />
+    <ClInclude Include="CoreImplV2\PersonV2.h" />
+    <ClInclude Include="CompRTV2\CompRTV2.h" />
+    <ClInclude Include="CompRTV2\AddressRT2.h" />
+    <ClInclude Include="CompRTV2\PersonRT2.h" />
+    <ClInclude Include="CompRTV2\CitizenRT2.h" />
+    <ClInclude Include="CoreImplV2\RefSmartPoint.h" />
+    <ClInclude Include="CompRTV2b\AddressRT2b.h" />
+    <ClInclude Include="CompRTV2b\CitizenRT2b.h" />
+    <ClInclude Include="CompRTV2b\PersonRT2b.h" />
+  </ItemGroup>
+</Project>
