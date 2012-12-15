@@ -62,5 +62,47 @@ namespace UnitTestWnRTCompNet
             Assert.AreEqual(NAME_DARTH, citizenItf.Name);
             Assert.AreEqual(SURNAME_VADOR, citizenItf.Surname);
         }
+
+        [TestMethod]
+        public void TestMethodWinRTCompNetDll()
+        {
+            // C# WinRT Person
+            WinRTCompNetDll.Person person = new WinRTCompNetDll.Person(NAME_DARTH, SURNAME_VADOR);
+
+            Assert.IsTrue(person.CanSave());
+
+            // Note: Because the interface is implemented explicitly, it is necessary to put the 
+            // instance in the IPerson interface to access it.
+            // C++ WinRT IPerson interface
+            WinRTCompV2.IPerson personItf;
+
+            // C++ WinRT Person class
+            WinRTCompV2.Person personV2 = new WinRTCompV2.Person(NAME_LUKE, SURNAME_SKYWALKER);
+
+            // the interface is now implemented by the C# person
+            personItf = person;
+            Assert.AreEqual(NAME_DARTH, personItf.Name);
+            Assert.AreEqual(SURNAME_VADOR, personItf.Surname);
+
+            // the interface is now implemented by the C++ Person
+            personItf = personV2;
+            Assert.AreEqual(NAME_LUKE, personItf.Name);
+            Assert.AreEqual(SURNAME_SKYWALKER, personItf.Surname);
+
+            // Create a C# Address and Citizen
+            WinRTCompNetDll.Address addressDarth = new WinRTCompNetDll.Address(STREET_DARTH, ZIP_DARTH, CITY_DARTH);
+            WinRTCompNetDll.Citizen citizenDarth = new WinRTCompNetDll.Citizen(NAME_DARTH, SURNAME_VADOR, addressDarth);
+
+            // Put the C# Citizen in the ICitizen C++ interface. The method FormatDisplay() is not visible  
+            WinRTCompV2.ICitizen citizenItf = citizenDarth;
+            Assert.AreEqual(NAME_DARTH, citizenItf.Name);
+            Assert.AreEqual(SURNAME_VADOR, citizenItf.Surname);
+
+            // Put the C# Address in the IAddress C++ interface 
+            WinRTCompV2.IAddress addressItf = citizenItf.Address;
+            Assert.AreEqual(STREET_DARTH, addressItf.Street);
+            Assert.AreEqual(ZIP_DARTH, addressItf.ZipCode);
+            Assert.AreEqual(CITY_DARTH, addressItf.City);
+        }
     }
 }

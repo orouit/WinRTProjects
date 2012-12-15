@@ -137,6 +137,10 @@
       <Project>{8b0eb706-c750-487c-8b52-66ba4451a90f}</Project>
       <Name>TestWinRTCompApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinRTCompNet\WinRTCompNet.csproj">
+      <Project>{9041d922-9a71-4bc2-98b2-53e51b709597}</Project>
+      <Name>WinRTCompNet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WinRTCompV2\WinRTCompV2.vcxproj">
       <Project>{baa8de0a-9ac8-48d9-941d-a600a7fe1ec1}</Project>
       <Name>WinRTCompV2</Name>

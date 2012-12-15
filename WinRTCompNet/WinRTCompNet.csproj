@@ -9,8 +9,8 @@
     <ProjectGuid>{9041D922-9A71-4BC2-98B2-53E51B709597}</ProjectGuid>
     <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinRTCompNet</RootNamespace>
-    <AssemblyName>WinRTCompNet</AssemblyName>
+    <RootNamespace>WinRTCompNetDll</RootNamespace>
+    <AssemblyName>WinRTCompNetDll</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -106,6 +106,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Citizen.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

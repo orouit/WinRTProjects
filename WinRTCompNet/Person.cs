@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 using WinRTCompV2;
 
-namespace WinRTCompNet
+namespace WinRTCompNetDll
 {
-    public sealed class Person : IPerson
+    /// <summary>
+    /// C# implementation of the WinRT component interface IPerson
+    /// 
+    /// This interface must be implemented EXPLICITLY to workaround a known 
+    /// bug of the compiler. Fortunately this workaround wouldn't need a 
+    /// modification once the issue is solved by Microsoft.
+    /// </summary>
+    public  sealed class Person : IPerson
     {
         #region Fields
 
@@ -17,7 +24,7 @@ namespace WinRTCompNet
 
         #endregion
 
-        #region Consttructors
+        #region Constructors
 
         public Person()
         {
@@ -31,22 +38,16 @@ namespace WinRTCompNet
 
         #endregion
 
-        public string Name
+        string IPerson.Name
         {
-            get;
-            set;
+            get { return name; }
+            set { name = value; }
         }
 
-        public string Surname
+        string IPerson.Surname
         {
-            get
-            {
-                return surname;
-            }
-            set
-            {
-                surname = value;
-            }
+            get { return surname; }
+            set { surname = value; }
         }
 
         public bool CanSave()
