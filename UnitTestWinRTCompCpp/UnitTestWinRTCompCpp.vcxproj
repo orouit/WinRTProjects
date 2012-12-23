@@ -251,6 +251,9 @@
     <ProjectReference Include="..\WinRTCompV3\WinRTCompV3.vcxproj">
       <Project>{85ffeee3-4c69-4c81-a83d-461d48343e65}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\WRLCompV1\WRLCompV1.vcxproj">
+      <Project>{0d585932-fbc4-4b0a-90b5-ccf34aefd4c6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

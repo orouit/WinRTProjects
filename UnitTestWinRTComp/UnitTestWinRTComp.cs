@@ -186,6 +186,22 @@ namespace UnitTestWinRTComp
     }
 
     [TestClass]
+    public class UnitTestWRLCompV1
+    {
+        [TestMethod]
+        public void TestWRLPerson()
+        {
+            WRLCompV1.PersonClass person = new WRLCompV1.PersonClass();
+
+            person.Name = TestData.TEXT_NAME1;
+            person.Surname = TestData.TEXT_SURNAME1;
+
+            Assert.AreEqual(TestData.TEXT_NAME1, person.Name);
+            Assert.AreEqual(TestData.TEXT_SURNAME1, person.Surname);
+        }
+    }
+
+    [TestClass]
     public class UnitTestWinRTCompV2
     {
         [TestMethod]

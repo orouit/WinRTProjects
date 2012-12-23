@@ -1,0 +1,64 @@
+import "inspectable.idl";
+import "Windows.Foundation.idl";
+
+#define COMPONENT_VERSION 1.0
+
+namespace WRLCompV1
+{
+	interface IPerson;
+	interface IAddress;
+	interface ISaveable;
+	runtimeclass PersonClass;
+	runtimeclass AddressClass;
+	
+
+    [uuid(0d585932-fbc4-4b0a-90b5-ccf34aefd4c6)] 
+	[version(COMPONENT_VERSION)] 
+    interface IPerson : IInspectable
+    {
+		[propget] HRESULT Name([out, retval] HSTRING* value);
+		[propput] HRESULT Name([in] HSTRING value);
+
+		[propget] HRESULT Surname([out, retval] HSTRING* value);
+		[propput] HRESULT Surname([in] HSTRING value);
+    }
+
+	[uuid(497783FC-D66D-4DF6-AAFC-C4D879AB22F1)] 
+	[version(COMPONENT_VERSION)]
+	interface IAddress : IInspectable
+	{
+		[propget] HRESULT Street([out, retval] HSTRING* value);
+		[propput] HRESULT Street([in] HSTRING value);
+
+		[propget] HRESULT ZipCode([out, retval] HSTRING* value);
+		[propput] HRESULT ZipCode([in] HSTRING value);
+
+		[propget] HRESULT Name([out, retval] HSTRING* value);
+		[propput] HRESULT Name([in] HSTRING value);
+
+		[propget] HRESULT City([out, retval] HSTRING* value);
+		[propput] HRESULT City([in] HSTRING value);
+	}
+
+	[uuid(C3F9CEA3-B897-4A79-BF6C-02B5DF4DB77D)]
+	[version(COMPONENT_VERSION)]
+	interface ISaveable : IInspectable
+	{
+		HRESULT CanSave([out, retval] boolean *value);
+	}
+
+    [version(COMPONENT_VERSION)] 
+	[activatable(COMPONENT_VERSION)]
+    runtimeclass PersonClass
+    {
+        [default] interface IPerson;
+		interface ISaveable;
+    }
+
+    [version(COMPONENT_VERSION)] 
+	[activatable(COMPONENT_VERSION)]
+    runtimeclass AddressClass
+    {
+        [default] interface IAddress;
+    }
+}
