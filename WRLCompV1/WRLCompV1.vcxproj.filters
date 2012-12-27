@@ -5,17 +5,40 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{0fb2f3b6-102d-4350-9ecc-9c43dd1115c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{12dbd88a-078b-4092-b14f-a0ec03afabe3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="module.cpp" />
-    <ClCompile Include="WRLCompV1.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="HSTRINGHelper.cpp" />
+    <ClCompile Include="module.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WRLAddress.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WRLCitizen.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WRLPerson.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HSTRINGHelper.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="HSTRINGHelper.h" />
+    <ClInclude Include="HSTRINGHelper.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveableHelper.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="WRLCompV1.idl" />

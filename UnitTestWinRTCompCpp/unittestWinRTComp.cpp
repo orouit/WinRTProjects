@@ -81,7 +81,7 @@ namespace UnitTestWinRTCompCpp
 		/**
 			This test directly uses the WRL framework to create and use the Person component
 		 */
-		TEST_METHOD(TestCOMLikeLoadOfWinRTComponent)
+		TEST_METHOD(TestPersonWRLCompV1WithWRL)
 		{
 			// Activate an instance of Person and get the IPerson interface
 			HStringReference runtimeClassPerson(L"WRLCompV1.PersonClass");

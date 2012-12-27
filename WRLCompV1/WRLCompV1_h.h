@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Sun Dec 23 11:04:54 2012
+/* at Thu Dec 27 20:54:44 2012
  */
-/* Compiler settings for C:\Users\Olivier\AppData\Local\Temp\WRLCompV1.idl-65427e1f:
+/* Compiler settings for C:\Users\Olivier\AppData\Local\Temp\WRLCompV1.idl-0e5cd94a:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -102,6 +102,22 @@ namespace ABI {
 #endif 	/* ____x_ABI_CWRLCompV1_CISaveable_FWD_DEFINED__ */
 
 
+#ifndef ____x_ABI_CWRLCompV1_CICitizen_FWD_DEFINED__
+#define ____x_ABI_CWRLCompV1_CICitizen_FWD_DEFINED__
+typedef interface __x_ABI_CWRLCompV1_CICitizen __x_ABI_CWRLCompV1_CICitizen;
+
+#ifdef __cplusplus
+namespace ABI {
+    namespace WRLCompV1 {
+        interface ICitizen;
+    } /* end namespace */
+} /* end namespace */
+
+#endif /* __cplusplus */
+
+#endif 	/* ____x_ABI_CWRLCompV1_CICitizen_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "inspectable.h"
 #include "Windows.Foundation.h"
@@ -113,6 +129,7 @@ extern "C"{
 
 /* interface __MIDL_itf_WRLCompV1_0000_0000 */
 /* [local] */ 
+
 
 
 
@@ -131,6 +148,13 @@ class AddressClass;
 } /*WRLCompV1*/
 }
 #endif
+#ifdef __cplusplus
+namespace ABI {
+namespace WRLCompV1 {
+class CitizenClass;
+} /*WRLCompV1*/
+}
+#endif
 #if !defined(____x_ABI_CWRLCompV1_CIPerson_INTERFACE_DEFINED__)
 extern const __declspec(selectany) WCHAR InterfaceName_WRLCompV1_IPerson[] = L"WRLCompV1.IPerson";
 #endif /* !defined(____x_ABI_CWRLCompV1_CIPerson_INTERFACE_DEFINED__) */
@@ -138,6 +162,7 @@ extern const __declspec(selectany) WCHAR InterfaceName_WRLCompV1_IPerson[] = L"W
 
 /* interface __MIDL_itf_WRLCompV1_0000_0000 */
 /* [local] */ 
+
 
 
 
@@ -339,18 +364,6 @@ EXTERN_C const IID IID___x_ABI_CWRLCompV1_CIAddress;
                 virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Street( 
                     /* [in] */ HSTRING value) = 0;
                 
-                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ZipCode( 
-                    /* [out][retval] */ HSTRING *value) = 0;
-                
-                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ZipCode( 
-                    /* [in] */ HSTRING value) = 0;
-                
-                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
-                    /* [out][retval] */ HSTRING *value) = 0;
-                
-                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Name( 
-                    /* [in] */ HSTRING value) = 0;
-                
                 virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_City( 
                     /* [out][retval] */ HSTRING *value) = 0;
                 
@@ -405,22 +418,6 @@ EXTERN_C const IID IID___x_ABI_CWRLCompV1_CIAddress;
             __x_ABI_CWRLCompV1_CIAddress * This,
             /* [in] */ HSTRING value);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ZipCode )( 
-            __x_ABI_CWRLCompV1_CIAddress * This,
-            /* [out][retval] */ HSTRING *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ZipCode )( 
-            __x_ABI_CWRLCompV1_CIAddress * This,
-            /* [in] */ HSTRING value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
-            __x_ABI_CWRLCompV1_CIAddress * This,
-            /* [out][retval] */ HSTRING *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Name )( 
-            __x_ABI_CWRLCompV1_CIAddress * This,
-            /* [in] */ HSTRING value);
-        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_City )( 
             __x_ABI_CWRLCompV1_CIAddress * This,
             /* [out][retval] */ HSTRING *value);
@@ -467,18 +464,6 @@ EXTERN_C const IID IID___x_ABI_CWRLCompV1_CIAddress;
 
 #define __x_ABI_CWRLCompV1_CIAddress_put_Street(This,value)	\
     ( (This)->lpVtbl -> put_Street(This,value) ) 
-
-#define __x_ABI_CWRLCompV1_CIAddress_get_ZipCode(This,value)	\
-    ( (This)->lpVtbl -> get_ZipCode(This,value) ) 
-
-#define __x_ABI_CWRLCompV1_CIAddress_put_ZipCode(This,value)	\
-    ( (This)->lpVtbl -> put_ZipCode(This,value) ) 
-
-#define __x_ABI_CWRLCompV1_CIAddress_get_Name(This,value)	\
-    ( (This)->lpVtbl -> get_Name(This,value) ) 
-
-#define __x_ABI_CWRLCompV1_CIAddress_put_Name(This,value)	\
-    ( (This)->lpVtbl -> put_Name(This,value) ) 
 
 #define __x_ABI_CWRLCompV1_CIAddress_get_City(This,value)	\
     ( (This)->lpVtbl -> get_City(This,value) ) 
@@ -633,14 +618,9 @@ EXTERN_C const IID IID___x_ABI_CWRLCompV1_CISaveable;
 /* interface __MIDL_itf_WRLCompV1_0000_0003 */
 /* [local] */ 
 
-#ifndef RUNTIMECLASS_WRLCompV1_PersonClass_DEFINED
-#define RUNTIMECLASS_WRLCompV1_PersonClass_DEFINED
-extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_PersonClass[] = L"WRLCompV1.PersonClass";
-#endif
-#ifndef RUNTIMECLASS_WRLCompV1_AddressClass_DEFINED
-#define RUNTIMECLASS_WRLCompV1_AddressClass_DEFINED
-extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_AddressClass[] = L"WRLCompV1.AddressClass";
-#endif
+#if !defined(____x_ABI_CWRLCompV1_CICitizen_INTERFACE_DEFINED__)
+extern const __declspec(selectany) WCHAR InterfaceName_WRLCompV1_ICitizen[] = L"WRLCompV1.ICitizen";
+#endif /* !defined(____x_ABI_CWRLCompV1_CICitizen_INTERFACE_DEFINED__) */
 
 
 /* interface __MIDL_itf_WRLCompV1_0000_0003 */
@@ -650,6 +630,198 @@ extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_AddressClass[] =
 
 extern RPC_IF_HANDLE __MIDL_itf_WRLCompV1_0000_0003_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_WRLCompV1_0000_0003_v0_0_s_ifspec;
+
+#ifndef ____x_ABI_CWRLCompV1_CICitizen_INTERFACE_DEFINED__
+#define ____x_ABI_CWRLCompV1_CICitizen_INTERFACE_DEFINED__
+
+/* interface __x_ABI_CWRLCompV1_CICitizen */
+/* [uuid][object] */ 
+
+
+
+/* interface ABI::WRLCompV1::ICitizen */
+/* [uuid][object] */ 
+
+
+EXTERN_C const IID IID___x_ABI_CWRLCompV1_CICitizen;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    } /* end extern "C" */
+    namespace ABI {
+        namespace WRLCompV1 {
+            
+            MIDL_INTERFACE("863571FC-4CBB-47E8-8BD3-2709D5CB7D0D")
+            ICitizen : public IInspectable
+            {
+            public:
+                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+                    /* [out][retval] */ HSTRING *value) = 0;
+                
+                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Name( 
+                    /* [in] */ HSTRING value) = 0;
+                
+                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Surname( 
+                    /* [out][retval] */ HSTRING *value) = 0;
+                
+                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Surname( 
+                    /* [in] */ HSTRING value) = 0;
+                
+                virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Address( 
+                    /* [out][retval] */ ABI::WRLCompV1::IAddress **value) = 0;
+                
+                virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Address( 
+                    /* [in] */ ABI::WRLCompV1::IAddress *value) = 0;
+                
+            };
+
+            extern const __declspec(selectany) IID & IID_ICitizen = __uuidof(ICitizen);
+
+            
+        }  /* end namespace */
+    }  /* end namespace */
+    extern "C" { 
+    
+#else 	/* C style interface */
+
+    typedef struct __x_ABI_CWRLCompV1_CICitizenVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __x_ABI_CWRLCompV1_CICitizen * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __x_ABI_CWRLCompV1_CICitizen * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out] */ ULONG *iidCount,
+            /* [size_is][size_is][out] */ IID **iids);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out] */ HSTRING *className);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out] */ TrustLevel *trustLevel);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out][retval] */ HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Name )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [in] */ HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Surname )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out][retval] */ HSTRING *value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Surname )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [in] */ HSTRING value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Address )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [out][retval] */ __x_ABI_CWRLCompV1_CIAddress **value);
+        
+        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Address )( 
+            __x_ABI_CWRLCompV1_CICitizen * This,
+            /* [in] */ __x_ABI_CWRLCompV1_CIAddress *value);
+        
+        END_INTERFACE
+    } __x_ABI_CWRLCompV1_CICitizenVtbl;
+
+    interface __x_ABI_CWRLCompV1_CICitizen
+    {
+        CONST_VTBL struct __x_ABI_CWRLCompV1_CICitizenVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define __x_ABI_CWRLCompV1_CICitizen_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __x_ABI_CWRLCompV1_CICitizen_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __x_ABI_CWRLCompV1_CICitizen_get_Name(This,value)	\
+    ( (This)->lpVtbl -> get_Name(This,value) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_put_Name(This,value)	\
+    ( (This)->lpVtbl -> put_Name(This,value) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_get_Surname(This,value)	\
+    ( (This)->lpVtbl -> get_Surname(This,value) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_put_Surname(This,value)	\
+    ( (This)->lpVtbl -> put_Surname(This,value) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_get_Address(This,value)	\
+    ( (This)->lpVtbl -> get_Address(This,value) ) 
+
+#define __x_ABI_CWRLCompV1_CICitizen_put_Address(This,value)	\
+    ( (This)->lpVtbl -> put_Address(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* ____x_ABI_CWRLCompV1_CICitizen_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_WRLCompV1_0000_0004 */
+/* [local] */ 
+
+#ifndef RUNTIMECLASS_WRLCompV1_PersonClass_DEFINED
+#define RUNTIMECLASS_WRLCompV1_PersonClass_DEFINED
+extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_PersonClass[] = L"WRLCompV1.PersonClass";
+#endif
+#ifndef RUNTIMECLASS_WRLCompV1_AddressClass_DEFINED
+#define RUNTIMECLASS_WRLCompV1_AddressClass_DEFINED
+extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_AddressClass[] = L"WRLCompV1.AddressClass";
+#endif
+#ifndef RUNTIMECLASS_WRLCompV1_CitizenClass_DEFINED
+#define RUNTIMECLASS_WRLCompV1_CitizenClass_DEFINED
+extern const __declspec(selectany) WCHAR RuntimeClass_WRLCompV1_CitizenClass[] = L"WRLCompV1.CitizenClass";
+#endif
+
+
+/* interface __MIDL_itf_WRLCompV1_0000_0004 */
+/* [local] */ 
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_WRLCompV1_0000_0004_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_WRLCompV1_0000_0004_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

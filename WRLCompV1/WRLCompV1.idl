@@ -7,10 +7,11 @@ namespace WRLCompV1
 {
 	interface IPerson;
 	interface IAddress;
+	interface ICitizen;
 	interface ISaveable;
 	runtimeclass PersonClass;
 	runtimeclass AddressClass;
-	
+	runtimeclass CitizenClass;
 
     [uuid(0d585932-fbc4-4b0a-90b5-ccf34aefd4c6)] 
 	[version(COMPONENT_VERSION)] 
@@ -30,11 +31,8 @@ namespace WRLCompV1
 		[propget] HRESULT Street([out, retval] HSTRING* value);
 		[propput] HRESULT Street([in] HSTRING value);
 
-		[propget] HRESULT ZipCode([out, retval] HSTRING* value);
-		[propput] HRESULT ZipCode([in] HSTRING value);
-
-		[propget] HRESULT Name([out, retval] HSTRING* value);
-		[propput] HRESULT Name([in] HSTRING value);
+		//[propget] HRESULT ZipCode([out, retval] HSTRING* value);
+		//[propput] HRESULT ZipCode([in] HSTRING value);
 
 		[propget] HRESULT City([out, retval] HSTRING* value);
 		[propput] HRESULT City([in] HSTRING value);
@@ -45,6 +43,20 @@ namespace WRLCompV1
 	interface ISaveable : IInspectable
 	{
 		HRESULT CanSave([out, retval] boolean *value);
+	}
+
+	[uuid(863571FC-4CBB-47E8-8BD3-2709D5CB7D0D)]
+	[version(COMPONENT_VERSION)]
+	interface ICitizen : IInspectable 
+	{
+		[propget] HRESULT Name([out, retval] HSTRING* value);
+		[propput] HRESULT Name([in] HSTRING value);
+
+		[propget] HRESULT Surname([out, retval] HSTRING* value);
+		[propput] HRESULT Surname([in] HSTRING value);
+
+		[propget] HRESULT Address([out, retval] IAddress** value);
+		[propput] HRESULT Address([in] IAddress* value);
 	}
 
     [version(COMPONENT_VERSION)] 
@@ -60,5 +72,14 @@ namespace WRLCompV1
     runtimeclass AddressClass
     {
         [default] interface IAddress;
+		interface ISaveable;
     }
+
+    [version(COMPONENT_VERSION)] 
+	[activatable(COMPONENT_VERSION)]
+    runtimeclass CitizenClass
+    {
+        [default] interface ICitizen;
+		interface IPerson;
+		interface ISaveable;    }
 }
