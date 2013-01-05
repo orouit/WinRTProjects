@@ -31,9 +31,6 @@ namespace WRLCompV1
 		[propget] HRESULT Street([out, retval] HSTRING* value);
 		[propput] HRESULT Street([in] HSTRING value);
 
-		//[propget] HRESULT ZipCode([out, retval] HSTRING* value);
-		//[propput] HRESULT ZipCode([in] HSTRING value);
-
 		[propget] HRESULT City([out, retval] HSTRING* value);
 		[propput] HRESULT City([in] HSTRING value);
 	}
@@ -81,5 +78,6 @@ namespace WRLCompV1
     {
         [default] interface ICitizen;
 		interface IPerson;
-		interface ISaveable;    }
+		interface ISaveable;    
+	}
 }

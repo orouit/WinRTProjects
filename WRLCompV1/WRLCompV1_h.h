@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Thu Dec 27 20:54:44 2012
+/* at Tue Jan 01 11:30:26 2013
  */
-/* Compiler settings for C:\Users\Olivier\AppData\Local\Temp\WRLCompV1.idl-0e5cd94a:
+/* Compiler settings for C:\Users\Olivier\AppData\Local\Temp\WRLCompV1.idl-38cca6e8:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
